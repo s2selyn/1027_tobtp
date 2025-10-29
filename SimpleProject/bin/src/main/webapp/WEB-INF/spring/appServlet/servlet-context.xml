@@ -21,8 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- /WEB-INF/views/main.jsp 라는 경로 완성! -->
+	
 	<context:component-scan base-package="com.kh.spring" />
 	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/mypage/**" />
+			<beans:bean class="com.kh.spring.interceptor.LoginInterceptor" id="loginInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
