@@ -31,19 +31,6 @@ tmp/
 *.war
 # 압축파일들
 
-pom.xml
-
-/src/main/webapp/WEB-INF/spring/root-context.xml
-# root-context.xml
-
-/src/main/webapp/WEB-INF/spring/servlet-context.xml
-# Servlet-context.xml
-
-/src/main/webapp/WEB-INF/spring/security-context.xml
-# sequrity-context.xml
-
 /src/main/resources/mybatis-config.xml
 # mybatis-config.xml
 
-/src/main/resources/mappers/**/*.xml
-# 각종mapper.xml
