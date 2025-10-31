@@ -10,118 +10,105 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        div {box-sizing:border-box;} 
-        #header {
-            width:80%;
-            height:100px;
-            padding-top:20px;
-            margin:auto;
-        }
-        #header>div {width:100%; margin-bottom:10px;}
-        #header_1 {height:80%;}
-        #header_2 {height:60%;}
-
-        #header_1>div{
-            height:100%;
-            float:left;
-        }
-        #header_1_left {width:30%; position:relative;}
-        #header_1_center {width:40%;}
-        #header_1_right {width:30%;}
-
-        #header_1_left>img {height:100%; position:absolute; margin:auto; top:0px; bottom:0px; right:0px; left:0px;}
-        #header_1_right {text-align:center; line-height:35px; font-size:12px; text-indent:35px;}
-        #header_1_right>a {margin:5px;}
-        #header_1_right>a:hover {cursor:pointer;}
-
-        #header_2>ul {width:100%; height:100%; list-style-type:none; margin:auto; padding:0;}
-        #header_2>ul>li {float:left; width:25%; height:100%; line-height:55px; text-align:center;}
-        #header_2>ul>li a {text-decoration:none; color:black; font-size:18px; font-weight:900;}
-
-        #header_2 {border-top:1px solid lightgray;}
-
-        #header a {text-decoration:none; color:black;}
-
-        .content {
-            background-color:rgb(247, 245, 245);
-            width:80%;
-            margin:auto;
-        }
-        .innerOuter {
-            border:1px solid lightgray;
-            width:80%;
-            margin:auto;
-            padding:5% 10%;
-            background-color:white;
-        }
-
+        <style>
+        * {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: 'Inter', sans-serif;
+		}
+		
+		body {
+		  background-color: #fff;
+		  color: #333;
+		}
+        .header {
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  background-color: #ff9240;
+		  padding: 1rem 2rem;
+		  color: white;
+		}
+		
+		.logo {
+		  font-weight: 700;
+		  font-size: 1.3rem;
+		  line-height: 1.2;
+		  color: white;       /* 글자 색상 */
+    	  text-decoration: none; /* 밑줄 제거 */
+    	  cursor: pointer;    /* 클릭 가능한 커서 */
+		}
+		
+		
+		.search-container {
+		  flex: 1;
+		  max-width: 600px;
+		  display: flex;
+		  margin: 0 2rem;
+		}
+		
+		.search-container input {
+		  flex: 1;
+		  padding: 0.6rem;
+		  border: none;
+		  border-radius: 4px 0 0 4px;
+		  outline: none;
+		}
+		
+		.search-btn {
+		  background: white;
+		  border: none;
+		  border-radius: 0 4px 4px 0;
+		  padding: 0.6rem 1rem;
+		  cursor: pointer;
+		}
+		
+		.header-icons {
+		  display: flex;
+		  align-items: center;
+		  gap: 1rem;
+		}
+		
+		.header-icons a {
+		  color: white;
+		  text-decoration: none;
+		  font-weight: 500;
+		  font-size: 0.95rem;
+		}
+		
+		.category-dropdown {
+		  border: none;
+		  padding: 0.4rem;
+		  border-radius: 4px;
+		  background: white;
+		  color: #333;
+		}
     </style>
+
+    
 </head>
 <body>
 
-    <div id="header">
-        <div id="header_1">
-            <div id="header_1_left">
-                <img src="https://kh-academy.co.kr/resources/images/main/logo.svg" alt="">
-            </div>
-            <div id="header_1_center"></div>
-            <div id="header_1_right">
-            
-            <c:choose>
-            <c:when test="${ empty sessionScope.loginMember }">
-                <!-- 로그인 전 -->
-                <a href="/spring/join">회원가입</a>
-                <a data-toggle="modal" data-target="#loginModal">로그인</a>
-            </c:when>
-            <c:otherwise>
-                <!-- 로그인 후 -->
-                    <label>${ sessionScope.loginMember.userName }님 환영합니다</label> &nbsp;&nbsp;
-                    <a href="/spring/mypage">마이페이지</a>
-                    <a href="/spring/logout">로그아웃</a>
-            </c:otherwise>
-            </c:choose>
-            </div>
-        </div>
-        <div id="header_2">
-            <ul>
-                <li><a href="/spring">HOME</a></li>
-                <li><a href="/spring">HOME2</a></li>
-                <li><a href="/spring">HOME3</a></li>
-                <li><a href="/spring">HOME4</a></li>
-            </ul>
-        </div>
+    <header class="header">
+    <a href="/home" class="logo">
+    	Thirty<br>Orange<br>Babies
+	</a>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search for anything..." />
+      <button class="search-btn">🔍</button>
     </div>
 
-    <!-- 로그인 클릭 시 뜨는 모달 -->
-    <div class="modal fade" id="loginModal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-        
-                <form action="/spring/login" method="post">
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <label for="userId" class="mr-sm-2">ID : </label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter ID" id="userId" name="userId"> <br>
-                        <label for="userPwd" class="mr-sm-2">Password : </label>
-                        <input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="userPwd" name="userPwd">
-                    </div>
-                           
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">로그인</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
+    <div class="header-icons">
+      <a href="#">Product</a>
+      <a href="#">Review</a>
+      <a href="#">Customer Support</a>
+      <a href="#">Need Help</a>
+      <div class="icons">
+        🛒
+      </div>
     </div>
-    
-    <br clear="both">
+  </header>
 </body>
 </html>
