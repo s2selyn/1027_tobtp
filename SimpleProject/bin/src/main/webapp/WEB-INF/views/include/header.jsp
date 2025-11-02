@@ -25,6 +25,7 @@
             height:100%;
             float:left;
         }
+        #header_1_left {width:30%; position:relative;}
         #header_1_center {width:40%;}
         #header_1_right {width:30%;}
 

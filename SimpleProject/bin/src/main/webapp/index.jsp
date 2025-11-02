@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메인페이지입니다.</title>
 </head>
 <body>
 
-	<h1>하이하이</h1>
+	<jsp:include page="/WEB-INF/views/include/header.jsp" />
+	
+	<div style="width: 1200px; height: 600px;"></div>
+	
+	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 
 </body>
 </html>
