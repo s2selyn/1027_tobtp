@@ -8,28 +8,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.spring.product.model.dto.ProductDTO;
+import com.kh.spring.product.model.dto.ProductSaveDTO;
+import com.kh.spring.product.model.service.ProductSaveService;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
 @RequestMapping("product")
+@RequiredArgsConstructor
 public class ProductSaveController {
 	
-	@GetMapping("form")
+	private final ProductSaveService productSaveService;
+	
+	@GetMapping("/form")
 	public String toForm() {
 		
-		return "/product/form";
-		// 아직 페이지 없음
+		log.info("form으로 보내는 여기 메소드가 호출되나요?");
+		return "product/form";
 		
 	}
 	
 	@PostMapping
-	public String save(ProductDTO product, MultipartFile upfile, HttpSession session) {
+	public String save(ProductSaveDTO product, MultipartFile upfile, HttpSession session) {
 		
 		log.info("게시글 정보 : {}, 파일 정보 : {}", product, upfile);
 		
+		productSaveService.save(product, upfile, session);
+		
+		// save 성공했다면 리다이렉션
 		return "redirect:product/product";
 		
 	}
