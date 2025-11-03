@@ -1,4 +1,4 @@
-package com.kh.spring.product.model;
+package com.kh.spring.product.model.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

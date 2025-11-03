@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.spring.product.model.ProductDTO;
+import com.kh.spring.product.model.dto.ProductDTO;
 
 import lombok.extern.slf4j.Slf4j;
 
