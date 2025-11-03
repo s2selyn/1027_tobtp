@@ -10,7 +10,11 @@
 
 	<jsp:include page="/WEB-INF/views/include/header.jsp" />
 	
-	<div style="width: 1200px; height: 600px;"></div>
+	<div style="width: 1200px; height: 600px;">
+	
+		<h1>메인페이지 내용 들어가야함</h1>
+	
+	</div>
 	
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 

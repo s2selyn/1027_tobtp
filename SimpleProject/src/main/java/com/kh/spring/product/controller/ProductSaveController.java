@@ -19,10 +19,7 @@ public class ProductSaveController {
 	
 	@GetMapping("form")
 	public String toForm() {
-		
-		return "/product/form";
-		// 아직 페이지 없음
-		
+		return "product/product_save";
 	}
 	
 	@PostMapping
