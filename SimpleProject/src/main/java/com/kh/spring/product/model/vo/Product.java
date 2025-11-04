@@ -2,7 +2,7 @@ package com.kh.spring.product.model.vo;
 
 import java.util.Objects;
 
-public class product {
+public class Product {
 	private int productNo;
 	private String productName;
 	private int price;
@@ -11,11 +11,12 @@ public class product {
 	private String detailContent;
 	private String fileOriginName;
 	private String changeName;
-	public product() {
+	private int count;
+	public Product() {
 		super();
 	}
-	public product(int productNo, String productName, int price, int categoryNo, int memberNo, String detailContent,
-			String fileOriginName, String changeName) {
+	public Product(int productNo, String productName, int price, int categoryNo, int memberNo, String detailContent,
+			String fileOriginName, String changeName, int count) {
 		super();
 		this.productNo = productNo;
 		this.productName = productName;
@@ -25,6 +26,7 @@ public class product {
 		this.detailContent = detailContent;
 		this.fileOriginName = fileOriginName;
 		this.changeName = changeName;
+		this.count = count;
 	}
 	public int getProductNo() {
 		return productNo;
@@ -74,9 +76,15 @@ public class product {
 	public void setChangeName(String changeName) {
 		this.changeName = changeName;
 	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(categoryNo, changeName, detailContent, fileOriginName, memberNo, price, productName,
+		return Objects.hash(categoryNo, changeName, count, detailContent, fileOriginName, memberNo, price, productName,
 				productNo);
 	}
 	@Override
@@ -87,8 +95,8 @@ public class product {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		product other = (product) obj;
-		return categoryNo == other.categoryNo && Objects.equals(changeName, other.changeName)
+		Product other = (Product) obj;
+		return categoryNo == other.categoryNo && Objects.equals(changeName, other.changeName) && count == other.count
 				&& Objects.equals(detailContent, other.detailContent)
 				&& Objects.equals(fileOriginName, other.fileOriginName) && memberNo == other.memberNo
 				&& price == other.price && Objects.equals(productName, other.productName)
@@ -96,10 +104,9 @@ public class product {
 	}
 	@Override
 	public String toString() {
-		return "product [productNo=" + productNo + ", productName=" + productName + ", price=" + price + ", categoryNo="
+		return "Product [productNo=" + productNo + ", productName=" + productName + ", price=" + price + ", categoryNo="
 				+ categoryNo + ", memberNo=" + memberNo + ", detailContent=" + detailContent + ", fileOriginName="
-				+ fileOriginName + ", changeName=" + changeName + "]";
+				+ fileOriginName + ", changeName=" + changeName + ", count=" + count + "]";
 	}
-	
 	
 }

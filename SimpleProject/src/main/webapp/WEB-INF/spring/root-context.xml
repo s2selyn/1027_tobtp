@@ -27,7 +27,7 @@
 	</bean>
 	
 	<!-- 매퍼 인터페이스 스캔하게 하는 코드 -->
-	<mybatis-spring:scan base-package="com.kh.spring.member.model.dao, com.kh.spring.board.model.mapper"/>
+	<mybatis-spring:scan base-package="com.kh.spring.product.model.mapper"/>
 	
 	<!-- 파일 업로드 관련 빈 등록 -->
 	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
