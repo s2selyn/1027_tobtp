@@ -148,6 +148,8 @@
     </div>
 
     <button type="submit" class="btn-submit">상품 등록하기</button>
+    <%-- 임시 사용할 로그인 멤버 정보 --%>
+    <input type="hidden" name="memberNo" value="1" />
   </form>
 
   <script>

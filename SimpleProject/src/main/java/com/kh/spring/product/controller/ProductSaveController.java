@@ -35,10 +35,14 @@ public class ProductSaveController {
 		
 		log.info("게시글 정보 : {}, 파일 정보 : {}", product, upfile);
 		
+		// 세션에서 로그인한 사용자 번호 가져오고싶은데 형변환 이게 맞는지...? 나중에 로그인 기능이랑 같이 확인
+//		int memberNo = (int)session.getAttribute("loginMemberNo");
+//		product.setMemberNo(memberNo);
+		
 		productSaveService.save(product, upfile, session);
 		
 		// save 성공했다면 리다이렉션
-		return "redirect:product/product";
+		return "redirect:/index";
 		
 	}
 
