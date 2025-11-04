@@ -22,6 +22,14 @@ public class ProductSaveController {
 	
 	private final ProductSaveService productSaveService;
 	
+	@GetMapping
+	public String productHome() {
+		
+		log.info("product 메인 페이지 보여주기");
+		return "redirect:/";
+		
+	}
+	
 	@GetMapping("/form")
 	public String toForm() {
 		
@@ -38,7 +46,7 @@ public class ProductSaveController {
 		productSaveService.save(product, upfile, session);
 		
 		// save 성공했다면 리다이렉션
-		return "redirect:product/product";
+		return "redirect:/";
 		
 	}
 
