@@ -94,7 +94,7 @@
 </head>
 <body>
 
-  <form class="product-form" id="productForm" enctype="multipart/form-data">
+  <form method="post" action="/spring/product" class="product-form" id="productForm" enctype="multipart/form-data">
     <h2>상품 등록</h2>
 
     <div class="mb-3">
