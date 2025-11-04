@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("product")
+@RequestMapping(value="product", produces="text/html; charset=UTF-8")
 @RequiredArgsConstructor
 public class ProductSaveController {
 	
