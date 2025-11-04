@@ -138,7 +138,7 @@
 
     <div class="mb-3">
       <label for="image" class="form-label">상품 이미지 (1장)</label>
-      <input type="file" id="image" name="file" class="form-control" accept="image/*" onchange="previewImage(event)" required>
+      <input type="file" id="image" name="upfile" class="form-control" accept="image/*" onchange="previewImage(event)" required>
       <img id="preview" class="preview" alt="상품 이미지 미리보기">
     </div>
 
@@ -164,12 +164,14 @@
     }
 
     // 폼 제출 시 처리 (백엔드 연동 전용)
+    /*
     document.getElementById('productForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const formData = new FormData(e.target);
       alert("✅ 상품이 성공적으로 등록되었습니다!");
       console.log("등록 데이터:", Object.fromEntries(formData.entries()));
     });
+    */
   </script>
 
 </body>
