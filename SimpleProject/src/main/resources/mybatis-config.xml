@@ -13,7 +13,7 @@
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="/mapper/member-mapper.xml" />
+		<mapper resource="/mapper/productSave-mapper.xml" />
 	</mappers>
 
 </configuration>

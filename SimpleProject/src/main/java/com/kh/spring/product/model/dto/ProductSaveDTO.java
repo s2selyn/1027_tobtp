@@ -9,12 +9,13 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class ProductDTO {
+public class ProductSaveDTO {
 	
 	private Long productNo;
 	private String productName;
 	private int price;
 	private int categoryNo;
+	private int memberNo;
 	private String detailContent;
 	private String fileOriginName;
 	private String changeName;
