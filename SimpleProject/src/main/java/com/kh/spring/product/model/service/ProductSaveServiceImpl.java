@@ -106,10 +106,24 @@ public class ProductSaveServiceImpl implements ProductSaveService {
 		
 	}
 	
-	// 나중에 병합하고 써먹을 사용자 검증도 미리 작성
-	private void validateUser(ProductSaveDTO product, HttpSession session) {
-		
-	}
+//	// 나중에 병합하고 써먹을 사용자 검증도 미리 작성
+//	private void validateUser(ProductSaveDTO product, HttpSession session) {
+//		
+//		int productSaveWriter = product.getMemberNo();
+//		
+//		MemberDTO loginMember = (MemberDTO)session.getAttribute("loginMember");
+//		
+//		if(loginMember == null) {
+//			throw new NullPointerException("로그인이 필요한 기능입니다.");
+//		}
+//
+//		int memberNo = loginMember.getMemberNo();
+//		
+//		if(!productSaveWriter.equals(memberNo)) {
+//			throw new AuthenticationException("상품 등록 권한이 없습니다. 관리자에게 문의하세요.");
+//		}
+//		
+//	}
 	
 	// 값에 대한 유효성 검증 메소드로 책임분리 -> DTO 받아와서 안에 든것 제대로인지 확인
 	private void validateContent(ProductSaveDTO product) {
