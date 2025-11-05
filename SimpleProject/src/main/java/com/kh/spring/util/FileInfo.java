@@ -15,5 +15,6 @@ public class FileInfo {
 	
 	private String fileOriginName;
 	private String changeName;
+	private String filePath;
 
 }
