@@ -68,6 +68,5 @@
       <small>Kinbo eCommerce Template © 2021. Design by Templatecookie</small>
     </div>
   </footer>
-  </header>
 </body>
 </html>

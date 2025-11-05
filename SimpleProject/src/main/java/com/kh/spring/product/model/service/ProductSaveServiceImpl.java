@@ -28,7 +28,7 @@ public class ProductSaveServiceImpl implements ProductSaveService {
 	public int save(ProductSaveDTO product, MultipartFile upfile, HttpSession session) {
 		
 		// 1_1) 권한 검증 : product에서 memberNo 받아오기
-		int productSaveWriter = product.getMemberNo();
+//		int productSaveWriter = product.getMemberNo();
 		
 		// 1_2) 로그인한 사용자 확인 -> Member 메소드 작업한분께 받아서 풀어야함
 //		MemberDTO loginMember = (MemberDTO)session.getAttribute("loginMember");
@@ -103,6 +103,28 @@ public class ProductSaveServiceImpl implements ProductSaveService {
 		
 		// 5. 결과 반환하기
 		return result;
+		
+	}
+	
+	// 나중에 병합하고 써먹을 사용자 검증도 미리 작성
+	private void validateUser(ProductSaveDTO product, HttpSession session) {
+		
+	}
+	
+	// 값에 대한 유효성 검증 메소드로 책임분리 -> DTO 받아와서 안에 든것 제대로인지 확인
+	private void validateContent(ProductSaveDTO product) {
+		
+		// 비어있는지 확인
+		if(product.getProductName().trim().isBlank() || product.getDetailContent().trim().isBlank()) {
+			throw new InvalidArgumentsException("상품 정보를 올바르게 입력해주세요");
+		}
+		
+		// 태그 인식하지 않게 필터링
+		String productName = product.getProductName().replaceAll("<", "&lt;"); // 상품명 필터링
+		String detailContent = product.getDetailContent().replaceAll("<", "&lt;"); // 상품상세 필터링
+		
+		product.setProductName(productName);
+		product.setDetailContent(detailContent);
 		
 	}
 
