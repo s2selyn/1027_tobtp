@@ -2,95 +2,272 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        div {box-sizing:border-box;} 
-        #header {
-            width:80%;
-            height:100px;
-            padding-top:20px;
-            margin:auto;
-        }
-        #header>div {width:100%; margin-bottom:10px;}
-        #header_1 {height:80%;}
-        #header_2 {height:60%;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thirty Orange Babies</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+  	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 
-        #header_1>div{
-            height:100%;
-            float:left;
-        }
-        #header_1_left {width:30%; position:relative;}
-        #header_1_center {width:40%;}
-        #header_1_right {width:30%;}
+body {
+  background-color: #fff;
+  color: #333;
+}
 
-        #header_1_left>img {height:100%; position:absolute; margin:auto; top:0px; bottom:0px; right:0px; left:0px;}
-        #header_1_right {text-align:center; line-height:35px; font-size:12px; text-indent:35px;}
-        #header_1_right>a {margin:5px;}
-        #header_1_right>a:hover {cursor:pointer;}
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff9240;
+  padding: 1rem 2rem;
+  color: white;
+}
 
-        #header_2>ul {width:100%; height:100%; list-style-type:none; margin:auto; padding:0;}
-        #header_2>ul>li {float:left; width:25%; height:100%; line-height:55px; text-align:center;}
-        #header_2>ul>li a {text-decoration:none; color:black; font-size:18px; font-weight:900;}
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
 
-        #header_2 {border-top:1px solid lightgray;}
+.search-container {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  margin: 0 2rem;
+}
 
-        #header a {text-decoration:none; color:black;}
+.search-container input {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
 
-        .content {
-            background-color:rgb(247, 245, 245);
-            width:80%;
-            margin:auto;
-        }
-        .innerOuter {
-            border:1px solid lightgray;
-            width:80%;
-            margin:auto;
-            padding:5% 10%;
-            background-color:white;
-        }
+.search-btn {
+  background: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
 
-    </style>
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icons a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.category-dropdown {
+  border: none;
+  padding: 0.4rem;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+  transition: 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #ff9240;
+  color: white;
+}
+
+/* Product Section */
+.product-section {
+  flex: 1;
+}
+
+.product-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-info {
+  margin-top: 0.5rem;
+}
+
+.product-name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.product-price {
+  color: #007aff;
+  font-weight: 600;
+}
+
+.rating {
+  color: #ff9240;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: left;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer h2 {
+  color: #ff9240;
+  margin-bottom: 0.8rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.footer small {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Thirty<br>Orange<br>Babies</div>
 
-    <div id="header">
-        <div id="header_1">
-            <div id="header_1_left">
-                <img src="https://kh-academy.co.kr/resources/images/main/logo.svg" alt="">
-            </div>
-            <div id="header_1_center"></div>
-            <div id="header_1_right">
-            
-            <c:choose>
-            <c:when test="${ empty sessionScope.loginMember }">
-                <!-- 로그인 전 -->
-                <a href="/spring/join">회원가입</a>
-                <a data-toggle="modal" data-target="#loginModal">로그인</a>
-            </c:when>
-            <c:otherwise>
-                <!-- 로그인 후 -->
-                    <label>${ sessionScope.loginMember.userName }님 환영합니다</label> &nbsp;&nbsp;
-                    <a href="/spring/mypage">마이페이지</a>
-                    <a href="/spring/logout">로그아웃</a>
-            </c:otherwise>
-            </c:choose>
-            </div>
-        </div>
-        <div id="header_2">
-            <ul>
-                <li><a href="/spring">HOME</a></li>
-                <li><a href="/spring">HOME2</a></li>
-                <li><a href="/spring">HOME3</a></li>
-                <li><a href="/spring">HOME4</a></li>
-            </ul>
-        </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search for anything..." />
+      <button class="search-btn">🔍</button>
     </div>
+
+    <div class="header-icons">
+      <select class="category-dropdown">
+        <option>Category</option>
+      </select>
+      <a href="#">Review</a>
+      <a href="#">Compare</a>
+      <a href="#">Customer Support</a>
+      <a href="#">Need Help</a>
+      <a href="#">Login</a>
+      <a href="#">Sign Up</a>
+      <div class="icons">
+        🛒
+      </div>
+    </div>
+  </header>
+  
+<body>
+
+
+  <!-- MAIN -->
+  <main class="main">
+    <aside class="sidebar">
+      <ul>
+        <li class="active">Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+        <li>Menu5</li>
+        <li>Menu6</li>
+        <li>Menu7</li>
+        <li>Menu8</li>
+        <li>Menu9</li>
+        <li>Menu10</li>
+      </ul>
+    </aside>
+
+    <section class="product-section">
+      <h2>ALL PRODUCT</h2>
+      <div class="product-grid">
+        <!-- 상품 카드 반복 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200x150" alt="Product" />
+          <div class="product-info">
+            <p class="product-name">DELL 21.5 inch Full HD Monitor (E2216HV)</p>
+            <p class="product-price">500,000원</p>
+            <p class="rating">★★★★★ (56,767)</p>
+          </div>
+        </div>
+
+        <!-- 복사 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200x150" alt="Product" />
+          <div class="product-info">
+            <p class="product-name">DELL 21.5 inch Full HD Monitor (E2216HV)</p>
+            <p class="product-price">500,000원</p>
+            <p class="rating">★★★★★ (56,767)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
     <!-- 로그인 클릭 시 뜨는 모달 -->
     <div class="modal fade" id="loginModal">
