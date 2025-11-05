@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.spring.product.model.mapper.ProductMapper">
+
+	<select id="findAll"
+	        resultType="com.kh.spring.product.model.vo.Product">
+		SELECT
+		       PRODUCT_NO productNo
+		     , PRODUCT_NAME productName
+		     , PRICE price
+		     , CHANGE_NAME changeName
+		  FROM
+		       TB_PRODUCT        
+	</select>
+	
+	<select id="selectTotalCount" resultType="int">
+        SELECT COUNT(*) FROM TB_PRODUCT
+    </select>
+
+	<select id="findByProductNo"
+			parameterType="int"
+			resultType="com.kh.spring.product.model.vo.Product">
+		SELECT
+		       PRODUCT_NO productNo
+		     , PRODUCT_NAME productName
+		     , PRICE price
+		     , DETAIL_CONTENT detailContent
+		     , CHANGE_NAME changeName
+		  FROM
+		       TB_PRODUCT
+		 WHERE
+		       PRODUCT_NO =#{productNo}
+	</select>
+	
+	<!-- 색상 옵션 -->
+	<select id="selectColorsByProductNo" resultType="com.kh.spring.product.model.vo.Color">
+	    SELECT 
+	           C.COLOR_NUM as colorNo
+	         , C.COLOR_NAME as colorName
+	      FROM 
+	           TB_COLOR C
+	      JOIN 
+	           TB_OPTION O 
+	        ON 
+	           C.COLOR_NUM = O.COLOR_NUM
+	     WHERE 
+	           O.PRODUCT_NO = #{productNo}
+	     GROUP 
+	        BY 
+	           C.COLOR_NUM
+	         , C.COLOR_NAME
+	</select>
+	
+	<!-- 사이즈 옵션 -->
+	<select id="selectSizesByProductNo" resultType="com.kh.spring.product.model.vo.Size">
+	    SELECT 
+	           S.SIZE_NUM as sizeNo
+	         , S.SIZE_NAME as sizeName
+	      FROM 
+	           TB_SIZE S
+	      JOIN 
+	           TB_OPTION O 
+	        ON 
+	           S.SIZE_NUM = O.SIZE_NUM
+	     WHERE 
+	           O.PRODUCT_NO = #{productNo}
+	     GROUP 
+	        BY 
+	           S.SIZE_NUM
+	         , S.SIZE_NAME
+	</select>
+
+</mapper>
