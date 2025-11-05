@@ -1,4 +1,4 @@
-package com.kh.spring.member.service;
+package com.kh.spring.member.model.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

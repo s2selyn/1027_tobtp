@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kh.spring.member.dto.MemberDTO;
-import com.kh.spring.member.service.MemberService;
+import com.kh.spring.member.model.dto.MemberDTO;
+import com.kh.spring.member.model.service.MemberService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.kh.spring.member.dto;
+package com.kh.spring.member.model.dto;
 
 import java.sql.Date;
 

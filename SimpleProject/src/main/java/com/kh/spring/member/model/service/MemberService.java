@@ -1,8 +1,8 @@
-package com.kh.spring.member.service;
+package com.kh.spring.member.model.service;
 
 import javax.servlet.http.HttpSession;
 
-import com.kh.spring.member.dto.MemberDTO;
+import com.kh.spring.member.model.dto.MemberDTO;
 
 public interface MemberService {
 

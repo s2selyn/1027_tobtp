@@ -1,4 +1,4 @@
-package com.kh.spring.member.service;
+package com.kh.spring.member.model.service;
 
 
 import javax.servlet.http.HttpSession;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.kh.spring.exception.AuthenticationException;
 import com.kh.spring.exception.UserIdNotFoundException;
-import com.kh.spring.member.dao.MemberMapper;
-import com.kh.spring.member.dto.MemberDTO;
+import com.kh.spring.member.model.dao.MemberMapper;
+import com.kh.spring.member.model.dto.MemberDTO;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
