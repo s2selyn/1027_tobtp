@@ -202,34 +202,40 @@ td {
                 </tr>
             </thead>
             <tbody>
-                <!-- 장바구니 항목들을 반복하여 출력 -->
+            	<!-- 출력띠 -->
                 <c:forEach var="item" items="${cartList}">
-                    <tr class="cart__list__detail">
-                        <td><input type="checkbox" <c:if test="${item.isChecked == 'Y'}">checked</c:if>></td>
-                        <td><img src="image/${item.productNo}.jpg" alt="${item.productNo}"></td>
-                        <td>
-                            <a href="#">${item.productName}</a>
-                            <p>${item.productName} - 수량: ${item.quantity}</p>
-                        </td>
-                        <td>
-                            <button class="cart__list__optionbtn">옵션 변경</button>
-                        </td>
-                        <td><span class="price">${item.price * item.quantity}원</span></td>
-                        <td>무료</td>
-                    </tr>
-                </c:forEach>
+				    <tr class="cart__list__detail">
+				        <td><input type="checkbox" name="selected" value="${item.productNo}"></td>
+				        <td><img src="" alt="${item.productNo}"></td>
+				        <td>
+				            <a href="#">${item.productName}</a>
+				            <p>${item.productName} - 수량: ${item.quantity}</p>
+				        </td>
+				        <td>
+				            <button class="cart__list__optionbtn">옵션 변경</button>
+				        </td>
+				        <td><span class="price">${item.price * item.quantity}원</span></td>
+				        <td/>
+				        <td>
+				            <form action="cart/delete" method="post">
+				                <input type="hidden" name="cartNo" value="${item.cartNo}">
+				                <button type="submit" class="cart__list__optionbtn">삭제</button>
+				            </form>
+				        </td>
+				    </tr>
+				</c:forEach>
             </tbody>
             <tfoot>
                 <tr>
                     <td colspan="6">
-                        <button class="cart__list__optionbtn">선택상품 삭제</button>
                         <button class="cart__list__optionbtn">선택상품 찜</button>
                     </td>
                 </tr>
             </tfoot>
         </table>
         <div class="cart__mainbtns">
-            <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
+        	
+            <button class="cart__bigorderbtn left"> <a href="/spring">쇼핑 계속하기</a></button>
             <button class="cart__bigorderbtn right">주문하기</button>
         </div>
     </section>

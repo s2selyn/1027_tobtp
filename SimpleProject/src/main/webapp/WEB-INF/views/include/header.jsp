@@ -91,7 +91,7 @@
 <body>
 
     <header class="header">
-    <a href="/home" class="logo">
+    <a href="/spring" class="logo">
     	Thirty<br>Orange<br>Babies
 	</a>
 

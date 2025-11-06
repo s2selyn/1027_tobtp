@@ -13,31 +13,27 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class CartServiceImpl implements CartService {
+	
+	private final CartDao cartMapper;
 
-    private final CartDao cartMapper;
+	@Override
+	public void addCart(Cart cart) {
+		
+		// 같은 상품 인지? 같은 상품이면 수량 UPdate하긴해야함
+		// 
+		cartMapper.insertCart(cart);
+	}
 
-    @Override
-    public List<CartDTO> getCartList(int memberNo) {
-        return cartMapper.selectCartByMember(memberNo);
-    }
+	@Override
+	public List<CartDTO> getCartList() {
+		return cartMapper.selectAll();
+	}
 
-    @Override
-    public int addCart(Cart cart) {
-        return cartMapper.insertCart(cart);
-    }
+	@Override
+	public void removeCart(int cartNo) {
+		cartMapper.deleteCart(cartNo);
+	}
 
-    @Override
-    public int updateCartQuantity(Cart cart) {
-        return cartMapper.updateCartQuantity(cart);
-    }
-
-    @Override
-    public int removeCart(int cartNo) {
-        return cartMapper.deleteCart(cartNo);
-    }
-
-    @Override
-    public int updateCheckedStatus(int cartNo, String isChecked) {
-        return cartMapper.updateCheckedStatus(cartNo, isChecked);
-    }
 }
+
+

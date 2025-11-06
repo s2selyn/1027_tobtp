@@ -14,13 +14,10 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Cart {
     private int cartNo;
-    private Integer memberNo;
     private int productNo;
     private int quantity;
     private String optionText;
     private String isChecked;
-    private Date addedDate;
-    private Date updatedDate;
 }
 
 

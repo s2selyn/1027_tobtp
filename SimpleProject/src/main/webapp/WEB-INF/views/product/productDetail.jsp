@@ -172,7 +172,7 @@ function addToCart(productNo) {
         return;
     }
 
-    const optionText = `${color} / ${size}`;
+    const optionText = `\${color} / \${size}`;
 
     fetch(`${pageContext.request.contextPath}/cart/add`, {
         method: 'POST',
