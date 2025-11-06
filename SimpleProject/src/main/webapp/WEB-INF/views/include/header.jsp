@@ -215,8 +215,8 @@ body {
       <a href="#">Compare</a>
       <a href="#">Customer Support</a>
       <a href="#">Need Help</a>
-      <a href="#">Login</a>
-      <a href="#">Sign Up</a>
+      <a href="#loginModal">Login</a>
+      <a href="/spring/join">Sign Up</a>
       <div class="icons">
         🛒
       </div>
@@ -282,10 +282,10 @@ body {
                 <form action="/spring/login" method="post">
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <label for="userId" class="mr-sm-2">ID : </label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter ID" id="userId" name="userId"> <br>
-                        <label for="userPwd" class="mr-sm-2">Password : </label>
-                        <input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="userPwd" name="userPwd">
+                        <label for="memberId" class="mr-sm-2">ID : </label>
+                        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter ID" id="memberId" name="memberId"> <br>
+                        <label for="memberPwd" class="mr-sm-2">Password : </label>
+                        <input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="memberPwd" name="memberPwd">
                     </div>
                            
                     <!-- Modal footer -->

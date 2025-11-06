@@ -37,23 +37,23 @@
 
             <form action="edit" method="post">
                 <div class="form-group">
-                    <label for="userId">* ID : </label>
-                    <input type="text" class="form-control" id="userId" value="${ sessionScope.loginMember.userId }" name="userId" readonly> <br>
+                    <label for="memberId">* ID : </label>
+                    <input type="text" class="form-control" id="memberId" value="${ sessionScope.loginMember.memberId }" name="memberId" readonly> <br>
 
-                    <label for="userName">* Name : </label>
-                    <input type="text" class="form-control" id="userName" value="${ sessionScope.loginMember.userName }" name="userName" required> <br>
+                    <label for="nickname">* Name : </label>
+                    <input type="text" class="form-control" id="nickname" value="${ sessionScope.loginMember.nickname }" name="nickname" required> <br>
 
                     <label for="email"> &nbsp; Email : </label>
                     <input type="text" class="form-control" id="email" value="${ sessionScope.loginMember.email }" name="email"> <br>
                     
-                    <label for="email"> &nbsp; 판매자여부 : </label>
-                    <input type="text" class="form-control" id="email" value="${ sessionScope.loginMember.email }" name="email"> <br>
+                    <label for="status"> &nbsp; 판매자여부 : </label>
+                    <input type="text" class="form-control" id="status" value="${ sessionScope.loginMember.status }" name="status"> <br>
                     
-                    <label for="email"> &nbsp; 주소 : </label>
-                    <input type="text" class="form-control" id="email" value="${ sessionScope.loginMember.email }" name="email"> <br>
+                    <label for="address"> &nbsp; 주소 : </label>
+                    <input type="text" class="form-control" id="address" value="${ sessionScope.loginMember.address }" name="address"> <br>
                     
-                    <label for="email"> &nbsp; 휴대폰 : </label>
-                    <input type="text" class="form-control" id="email" value="${ sessionScope.loginMember.email }" name="email"> <br>
+                    <label for="phone"> &nbsp; 휴대폰 : </label>
+                    <input type="text" class="form-control" id="phone" value="${ sessionScope.loginMember.phone }" name="phone"> <br>
                     
 
                 </div> 

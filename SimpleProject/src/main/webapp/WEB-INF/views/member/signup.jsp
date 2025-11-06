@@ -38,29 +38,29 @@
 
             <form action="signup" method="post">
                 <div class="form-group">
-                    <label for="userId">* ID : </label>
-                    <input type="text" class="form-control" id="userId" placeholder="Please Enter ID" name="userId" required> <br>
+                    <label for="memberId">* ID : </label>
+                    <input type="text" class="form-control" id="memberId" placeholder="Please Enter ID" name="memberId" required> <br>
 
-                    <label for="userPwd">* Password : </label>
-                    <input type="password" class="form-control" id="userPwd" placeholder="Please Enter Password" name="userPwd" required> <br>
+                    <label for="memberPwd">* Password : </label>
+                    <input type="password" class="form-control" id="memberPwd" placeholder="Please Enter Password" name="memberPwd" required> <br>
 
                     <label for="checkPwd">* Password Check : </label>
                     <input type="password" class="form-control" id="checkPwd" placeholder="Please Enter Password" required> <br>
 
-                    <label for="userName">* Name : </label>
-                    <input type="text" class="form-control" id="userName" placeholder="Please Enter Name" name="userName" required> <br>
+                    <label for="nickname">* Name : </label>
+                    <input type="text" class="form-control" id="nickname" placeholder="Please Enter Name" name="nickname" required> <br>
 
                     <label for="email"> &nbsp; Email : </label>
                     <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name="email"> <br>
                     
-                    <label for="email"> &nbsp; 판매자여부 : </label>
-                    <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name="email"> <br>
+                    <label for="status"> &nbsp; 판매자여부 : </label>
+                    <input type="text" class="form-control" id="status" placeholder="Please Enter Status" name="status"> <br>
              
-					<label for="email"> &nbsp; 주소 : </label>
-                    <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name="email"> <br>
+					<label for="address"> &nbsp; 주소 : </label>
+                    <input type="text" class="form-control" id="address" placeholder="Please Enter Address" name="address"> <br>
                     
-                    <label for="email"> &nbsp; 휴대폰 : </label>
-                    <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name="email"> <br>
+                    <label for="phone"> &nbsp; 휴대폰 : </label>
+                    <input type="text" class="form-control" id="phone" placeholder="Please Enter Phone Number" name="phone"> <br>
              
 
                 </div> 
