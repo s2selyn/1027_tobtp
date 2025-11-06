@@ -53,7 +53,7 @@
                     <label for="email"> &nbsp; Email : </label>
                     <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name="email"> <br>
                     
-                    <label for="status"> &nbsp; 판매자여부 : </label>
+                    <label for="status"> &nbsp; 판매자여부 : (판매자:S/구매자:C) </label>
                     <input type="text" class="form-control" id="status" placeholder="Please Enter Status" name="status"> <br>
              
 					<label for="address"> &nbsp; 주소 : </label>

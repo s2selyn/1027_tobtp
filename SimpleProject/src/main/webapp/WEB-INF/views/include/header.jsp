@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   
+  <!-- Bootstrap CSS 추가 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  
   <style>
   	* {
   margin: 0;
@@ -71,6 +74,7 @@ body {
 }
 
 .header-icons a {
+  cursor: pointer;
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -215,8 +219,20 @@ body {
       <a href="#">Compare</a>
       <a href="#">Customer Support</a>
       <a href="#">Need Help</a>
-      <a href="#loginModal">Login</a>
-      <a href="/spring/join">Sign Up</a>
+      
+      <c:choose>
+      <c:when test="${ empty sessionScope.loginMember }">
+      	<!-- 로그인 전 -->
+      	<a data-toggle="modal" data-target="#loginModal">Login</a>
+      	<a href="/spring/join">SignUp</a>
+      </c:when>
+      <c:otherwise>
+      	<!-- 로그인 후 -->
+      	<label>${ sessionScope.loginMember.nickname }님 환영합니다.</label> &nbsp;&nbsp;
+      	<a href="/spring/mypage">MyPage</a>
+      	<a href="/spring/logout">LogOut</a>
+      </c:otherwise>
+      </c:choose>
       <div class="icons">
         🛒
       </div>
@@ -225,8 +241,7 @@ body {
   
 <body>
 
-
-  <!-- MAIN -->
+<!--
   <main class="main">
     <aside class="sidebar">
       <ul>
@@ -246,7 +261,6 @@ body {
     <section class="product-section">
       <h2>ALL PRODUCT</h2>
       <div class="product-grid">
-        <!-- 상품 카드 반복 -->
         <div class="product-card">
           <img src="https://via.placeholder.com/200x150" alt="Product" />
           <div class="product-info">
@@ -256,7 +270,6 @@ body {
           </div>
         </div>
 
-        <!-- 복사 -->
         <div class="product-card">
           <img src="https://via.placeholder.com/200x150" alt="Product" />
           <div class="product-info">
@@ -268,7 +281,7 @@ body {
       </div>
     </section>
   </main>
-
+-->
     <!-- 로그인 클릭 시 뜨는 모달 -->
     <div class="modal fade" id="loginModal">
         <div class="modal-dialog modal-sm">
@@ -300,5 +313,11 @@ body {
     </div>
     
     <br clear="both">
+    
+     <!-- jQuery와 Bootstrap JS 추가 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

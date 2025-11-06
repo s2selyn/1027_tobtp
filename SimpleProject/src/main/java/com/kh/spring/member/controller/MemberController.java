@@ -57,7 +57,7 @@ public class MemberController {
 	@PostMapping("signup")
 	public String signup(MemberDTO member
 						) {
-		log.info("입력값 넘어오는지 보야조 : {}", member);
+		log.info("입력값 : {}", member);
 		memberService.signUp(member);
 		return "redirect:/";
 	}
