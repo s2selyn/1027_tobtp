@@ -75,10 +75,10 @@ public class MemberController {
 	}
 	
 	@PostMapping("delete")
-	public String delete(@RequestParam(value="userPwd") String userPwd,
+	public String delete(@RequestParam(value="memberPwd") String memberPwd,
 						 HttpSession session) {
 	
-		memberService.delete(userPwd, session);
+		memberService.delete(memberPwd, session);
 		session.removeAttribute("loginMember");
 		return "redirect:/";
 	}
