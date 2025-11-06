@@ -67,7 +67,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public void delete(String userPwd, HttpSession session) {
+	public void delete(String memberPwd, HttpSession session) {
 
 		MemberDTO sessionMember = ((MemberDTO)session.getAttribute("loginMember"));
 		

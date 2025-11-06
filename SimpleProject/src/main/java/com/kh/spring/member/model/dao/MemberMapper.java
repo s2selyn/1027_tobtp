@@ -19,11 +19,11 @@ public interface MemberMapper {
 	@Insert ("INSERT INTO TB_MEMBER VALUES (SEQ_MEMBER_NO.NEXTVAL, #{memberId}, #{memberPwd}, #{nickname}, #{email}, SYSDATE, #{status}, #{address}, #{phone})")
 	int signup(MemberDTO member);
 	
-	@Update ("UPDATE TM_MEMBER SET NICKNAME = #{nickname}, EMAIL = #{email} WHERE MEMBER_ID = #{memberId}")
+	@Update ("UPDATE TB_MEMBER SET NICKNAME = #{nickname}, EMAIL = #{email} WHERE MEMBER_ID = #{memberId}")
 	int update(MemberDTO member);
 	
 	@Delete("DELETE FROM TB_MEMBER WHERE MEMBER_ID = #{memberId}")
-	int delete(String memberId );
+	int delete(String memberId);
 	
 
 }
