@@ -7,9 +7,10 @@ import java.util.Date;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-// @Component 나중에 빈등록하기
+@Component // 나중에 빈등록하기
 public class FileUpload {
 	
 	// 이 메소드를 호출하면 파일을 업로드하고 파일 정보를 반환?
@@ -28,6 +29,7 @@ public class FileUpload {
 			ServletContext application = session.getServletContext();
 			String savePath = application.getRealPath("resources/files/");
 			String filePath = "/spring/resources/files/" + changeName;
+			// context root 바꿔서 여기안되는건가?
 			
 			try {
 				
@@ -38,7 +40,11 @@ public class FileUpload {
 				return new FileInfo(fileOriginName, changeName, filePath);
 				
 			} catch(Exception e) {
+				
 				e.printStackTrace();
+				throw new RuntimeException();
+				// 파일 업로드 실패 예외 만들기
+				
 			}
 			
 		}

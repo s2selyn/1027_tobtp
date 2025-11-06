@@ -38,7 +38,7 @@ public class ProductSaveServiceImpl implements ProductSaveService {
 		// 1_3) 로그인한 사용자의 memberNo 가져오기
 //		int memberNo = loginMember.getMemberNo();
 		
-		// 1_4) 로그인한 사용자와 상품등록자가 같은지 확인
+		// 1_4) 로그인한 사용자와 상품등록자가 같은지 확인 => 인가 에러니까 Authorization 예외 클래스로 해야함 아직 없음
 //		if(!productSaveWriter.equals(memberNo)) {
 //			throw new AuthenticationException("상품 등록 권한이 없습니다. 관리자에게 문의하세요.");
 //		}
