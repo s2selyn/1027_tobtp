@@ -27,7 +27,7 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDTO login(MemberDTO member) {
 		
 		MemberDTO loginMember = mapper.login(member);	
-		
+	
 		return validateLoginMember(loginMember, member.getMemberPwd());
 	}
 	

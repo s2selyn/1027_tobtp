@@ -31,6 +31,7 @@ public class MemberController {
 							  ModelAndView mv) {
 		
 		MemberDTO loginMember = memberService.login(member);
+		
 		if(loginMember != null) {
 			session.setAttribute("loginMember", loginMember);
 			mv.setViewName("redirect:/");
@@ -56,9 +57,9 @@ public class MemberController {
 	@PostMapping("signup")
 	public String signup(MemberDTO member
 						) {
-		log.info("{}", member);
+		log.info("입력값 : {}", member);
 		memberService.signUp(member);
-		return "main";
+		return "redirect:/";
 	}
 	
 	@GetMapping("mypage")
