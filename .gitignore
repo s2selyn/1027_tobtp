@@ -30,3 +30,7 @@ tmp/
 *.jar
 *.war
 # 압축파일들
+
+/src/main/resources/mybatis-config.xml
+# mybatis-config.xml
+

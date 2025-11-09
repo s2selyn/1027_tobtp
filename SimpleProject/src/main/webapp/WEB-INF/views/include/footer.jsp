@@ -4,10 +4,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    	* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: 'Inter', sans-serif;
+		}
+		
+		body {
+		  background-color: #fff;
+		  color: #333;
+		}
+		 .footer {
+		  background-color: #333;
+		  color: white;
+		  padding: 2rem;
+		  text-align: left;
+		}
+		
+		.footer-content {
+		  max-width: 1200px;
+		  margin: 0 auto;
+		}
+		
+		.footer h2 {
+		  font-size: 1.5rem;
+		  color: #ff9240;
+		  margin-bottom: 0.8rem;
+		}
+		
+		.footer p {
+		  font-size: 0.9rem;
+		  line-height: 1.5;
+		  margin-bottom: 0.8rem;
+		}
+		
+		.footer small {
+		  display: block;
+		  text-align: right;
+		  margin-top: 1rem;
+		  color: #aaa;
+		  font-size: 0.8rem;
+		}
+    </style>
 </head>
-  <!-- FOOTER -->
-  <footer class="footer">
+<body>
+    <footer class="footer">
     <div class="footer-content">
       <h2>Thirty Orange Babies</h2>
       <p>
@@ -23,5 +68,6 @@
       <small>Kinbo eCommerce Template © 2021. Design by Templatecookie</small>
     </div>
   </footer>
+  </header>
 </body>
 </html>
