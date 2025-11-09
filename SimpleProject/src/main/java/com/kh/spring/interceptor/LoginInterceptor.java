@@ -1,16 +1,29 @@
 package com.kh.spring.interceptor;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class LoginInterceptor implements HandlerInterceptor {
+public class LoginInterceptor extends HandlerInterceptorAdapter{
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-            throws Exception {
-        // 로그인 체크
-        return true; // 임시로 로그인 체크 무시
-    }
+	@Override
+	public boolean preHandle(HttpServletRequest request,
+							 HttpServletResponse response,
+							 Object handler) throws IOException {
+		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("loginMember") != null) {
+			return true;
+		} else {
+			response.sendRedirect(request.getContextPath());
+			return false;
+		}
+		
+	}
+	
 }

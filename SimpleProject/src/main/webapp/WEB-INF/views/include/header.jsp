@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -89,6 +89,9 @@
     
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Thirty<br>Orange<br>Babies</div>
 
     <header class="header">
     <a href="/spring" class="logo">
